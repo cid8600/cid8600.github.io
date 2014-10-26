@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+      <script src="bower_components/platform/platform.js"></script>
+      <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+      <link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
+      <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+      <link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
+      <link rel="import" href="bower_components/core-menu/core-menu.html">
+      <link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
+      <link rel="import" href="bower_components/paper-item/paper-item.html">
+      <link rel="stylesheet" href="styles.css" />
+  </head>
+
+<body unresolved fullbleed>
+
+<template is="auto-binding" id="t">
+
+<core-scaffold id="scaffold">
+
+  <nav>
+    <core-toolbar>
+      <span>Single Page Polymer</span>
+    </core-toolbar>
+    <core-menu valueattr="hash" selected="{{route}}" on-core-select="{{menuItemSelected}}">
+      <template repeat="{{page, i in pages}}">
+        <paper-item icon="label{{route != page.hash ? '-outline' : ''}}" label="{{page.name}}" hash="{{page.hash}}">
+          <a href="#{{page.hash}}"></a>
+        </paper-item>
+      </template>
+    </core-menu>
+  </nav>
+
+  <core-toolbar tool flex>
+    <div flex></div>
+    <core-icon-button icon="refresh"></core-icon-button>
+    <core-icon-button icon="add"></core-icon-button>
+  </core-toolbar>
+
+  <div layout horizontal center-center fit>
+    <core-animated-pages selected="{{route}}" valueattr="hash" transitions="slide-from-right" on-tap="{{cyclePages}}">
+      <template repeat="{{page, i in pages}}">
+        <section hash="{{page.hash}}" layout vertical center-center>
+          <div>{{page.name}}</div>
+        </section>
+      </template>
+    </core-animated-pages>
+  </div>
+
+</core-scaffold>
+
+</template>
+
+<script>
+var template = document.querySelector('#t');
+
+template.pages = [
+  {name: 'Single', hash: 'one'},
+  {name: 'page', hash: 'two'},
+  {name: 'app', hash: 'three'},
+  {name: 'using', hash: 'four'},
+  {name: 'Polymer', hash: 'five'}
+];
+
+template.menuItemSelected = function(e, detail, sender) {
+  if (detail.isSelected) {
+    this.$ && this.$.scaffold.closeDrawer();
+  }
+};
+
+template.keyHandler = function(e, detail, sender) {
+  var pages = document.querySelector('#pages');
+
+  switch (detail.key) {
+    case 'left':
+    case 'up':
+      pages.selectPrevious();
+      break;
+    case 'right':
+    case 'down':
+      pages.selectNext();
+      break;
+    case 'space':
+      detail.shift ? pages.selectPrevious() : pages.selectNext();
+      break;
+  }
+};
+
+template.cyclePages = function(e, detail, sender) {
+  // If click was on a link, navigate and don't cycle page.
+  if (e.path[0].localName == 'a') {
+    return;
+  }
+  e.shiftKey ? sender.selectPrevious(true) :
+  sender.selectNext(true);
+};
+
+</script>
+</body>
+</html>
