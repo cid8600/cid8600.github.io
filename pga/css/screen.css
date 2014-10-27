@@ -87,6 +87,11 @@ article {
   height: 100px;
   background: red;
 }
+.container .header h1 {
+  text-align: center;
+  color: #fff;
+  line-height: 100px;
+}
 /* line 24, ../sass/screen.scss */
 .container .lf-poll {
   box-sizing: border-box;
