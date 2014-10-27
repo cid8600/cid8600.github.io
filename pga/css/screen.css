@@ -1,0 +1,194 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 8, ../sass/screen.scss */
+article {
+  max-width: 1024px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 14, ../sass/screen.scss */
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  justify-content: space-around;
+}
+/* line 19, ../sass/screen.scss */
+.container .header {
+  flex: 1 100%;
+  height: 100px;
+  background: red;
+}
+/* line 24, ../sass/screen.scss */
+.container .lf-poll {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+/* line 28, ../sass/screen.scss */
+.container .main {
+  flex: 1 100%;
+}
+/* line 30, ../sass/screen.scss */
+.container .main .wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  width: 100%;
+}
+/* line 35, ../sass/screen.scss */
+.container .main .wrapper .module-one {
+  background-color: #0f0f0f;
+  content: "Module One";
+}
+/* line 41, ../sass/screen.scss */
+.container .main .wrapper .module-three {
+  background-color: #6f6f6f;
+  content: "Module Three";
+}
+/* line 45, ../sass/screen.scss */
+.container .main .wrapper .module-four {
+  background-color: #a5a5a5;
+  content: "Module Four";
+}
+/* line 52, ../sass/screen.scss */
+.container .aside {
+  flex: 1 100%;
+  background-color: blue;
+}
+/* line 59, ../sass/screen.scss */
+.container .component {
+  flex: 1 100%;
+  min-height: 300px;
+}
+.container .aside .module-five{
+  background-color: blue;
+}
+
+/* line 65, ../sass/screen.scss */
+.container #mediawall-wrapper {
+  flex: 1 100%;
+  background: orange;
+}
+
+@media all and (min-width: 600px) {
+  /* line 73, ../sass/screen.scss */
+  .container .component {
+    flex: 1 33%;
+  }
+}
+@media all and (min-width: 800px) {
+  /* line 81, ../sass/screen.scss */
+  .container .main {
+    flex: 2 66%;
+    order: 1;
+  }
+  /* line 84, ../sass/screen.scss */
+  .container .main .component {
+    flex: 1 50%;
+  }
+  /* line 88, ../sass/screen.scss */
+  .container .aside {
+    flex: 1 33%;
+    order: 2;
+  }
+  /* line 91, ../sass/screen.scss */
+  .container .aside .component {
+    flex: 1 100%;
+  }
+  /* line 95, ../sass/screen.scss */
+  .container .module-one {
+    order: 1;
+  }
+  /* line 96, ../sass/screen.scss */
+  .container .module-two {
+    order: 2;
+  }
+  /* line 97, ../sass/screen.scss */
+  .container .module-three {
+    order: 3;
+  }
+  /* line 98, ../sass/screen.scss */
+  .container .module-four {
+    order: 4;
+  }
+  /* line 99, ../sass/screen.scss */
+  .container .module-five {
+    order: 1;
+  }
+  /* line 100, ../sass/screen.scss */
+  .container .module-six {
+    order: 2;
+  }
+  /* line 101, ../sass/screen.scss */
+  .container #mediawall-wrapper {
+    order: 3;
+  }
+}

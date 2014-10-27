@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your Website</title>
+    <meta content='' name='description'>
+    <meta content='' name='author'>
+    <meta content='3 days' name='revisit-after'>
+    <link href='css/screen.css' media='screen' rel='stylesheet'>
+    <script src='//cdn.livefyre.com/Livefyre.js'></script>
+  </head>
+  <body>
+    <header>
+<!--      <nav>
+        <ul>
+          <li>Menu Item</li>
+        </ul>
+      </nav>
+-->
+    </header>
+    <section>
+      <article>
+        <div class='container'>
+          <div class='header'>
+            Join the Conversation #CidRawks
+          </div>
+          <div class='main'>
+            <div class='wrapper'>
+              <div class='module-one component'></div>
+              <div class='module-two component'>
+                <div class='poll'>
+                  <div id='lf-poll-55817e285a6a11e4a7c20a8047e01717'></div>
+                </div>
+              </div>
+              <div class='module-three component'></div>
+              <div class='module-four component'></div>
+            </div>
+          </div>
+          <div class='aside'>
+            <div class='wrapper'>
+              <div class='module-five component'></div>
+            </div>
+          </div>
+          <div id='mediawall-wrapper'></div>
+        </div>
+      </article>
+    </section>
+  </body>
+  <script>
+    Livefyre.require(["poll#0"],function(a){(new a({networkId:"client-solutions.fyre.co",siteId:"361143",pollId:"55817e285a6a11e4a7c20a8047e01717",env:"prod"})).render(document.getElementById("lf-poll-55817e285a6a11e4a7c20a8047e01717"))});
+  </script>
+  <script>
+    Livefyre.require(['streamhub-hot-collections-example'], function (example) {
+      var el = document.getElementById('example');
+      var view = example(el);
+    });
+  </script>
+  <script>
+    Livefyre.require([
+      'streamhub-wall#3',
+      'streamhub-sdk#2.13.8'
+    ], function(LiveMediaWall, SDK){
+
+      var wall = new LiveMediaWall({
+          el: document.getElementById('mediawall-wrapper'),
+          collection: new (SDK.Collection)({
+              "network": "client-demo-accounts.fyre.co",
+              "siteId": "365812",
+              "articleId": "custom-1412617261425",
+          })
+      });
+    });
+  </script>
+</html>

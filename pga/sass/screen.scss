@@ -1,0 +1,106 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+article {
+  max-width: 1024px;
+  display: block;
+  margin: 0 auto;
+  }
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  justify-content: space-around;
+  .header {
+    flex: 1 100%;
+    height: 100px;
+    background: red;
+  }
+  .lf-poll {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .main {
+    flex: 1 100%;
+    .wrapper {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: stretch;
+      width: 100%;
+      .module-one {
+        background-color: #0f0f0f;
+        content: "Module One"
+      }
+      .module-two {
+      }
+      .module-three {
+        background-color: #6f6f6f;
+        content: "Module Three"
+      }
+      .module-four {
+        background-color: #a5a5a5;
+        content: "Module Four"
+      }
+    }
+  }
+
+  .aside {
+    flex: 1 100%;
+    .module-five {
+    }
+    .module-six {
+    }
+  }
+  .component {
+    flex: 1 100%;
+    min-height: 300px;
+  }
+
+
+  #mediawall-wrapper {
+    flex: 1 100%;
+    background: orange;
+  }
+}
+
+@media all and (min-width: 600px) {
+  .container{
+    .component {
+      flex: 1 33%;
+    }
+  }
+}
+
+@media all and (min-width: 800px) {
+  .container {
+    .main {
+      flex: 2 66%;
+      order: 1;
+      .component {
+        flex: 1 50%;
+      }
+    }
+    .aside {
+      flex: 1 33%;
+      order: 2;
+      .component {
+        flex: 1 100%;
+      }
+    }
+    .module-one { order: 1; }
+    .module-two   { order: 2; }
+    .module-three { order: 3; }
+    .module-four { order: 4; }
+    .module-five { order: 1; }
+    .module-six { order: 2; }
+    #mediawall-wrapper {
+      order: 3;
+    }
+  }
+}
+
